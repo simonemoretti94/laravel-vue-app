@@ -19,12 +19,14 @@ export default {
             state,
         }
     },
-    props: { info: String, },
+    props: { info: String, posts: Object },
     methods: {
 
     },
     mounted() {
         //console.log('info json: ', this.info);
+        console.log('posts json: ', this.posts);
+        state.posts = this.posts;
     }
 }
 </script>
