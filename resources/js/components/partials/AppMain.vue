@@ -1,5 +1,7 @@
 <script>
 import { state } from '../../state.js';
+import MainSidebar from './MainSidebar.vue';
+import MainContent from './MainContent.vue';
 
 export default {
     name: 'AppMain',
@@ -8,24 +10,234 @@ export default {
             state,
         }
     },
+    components: {
+        MainSidebar,
+        MainContent,
+    },
     props: { info: String, },
 }
 </script>
 
 <template>
-    <h1>{{ info }} to my vue {{ state.greetings }}!</h1>
+
     <main class="d-flex">
         <section id="sidebar" class="col-3">
-            <nav class="nav justify-content-center flex-column">
-                <a class="nav-link active" href="#" aria-current="page">Active link</a>
-                <a class="nav-link" href="#">Link</a>
-                <a class="nav-link disabled" href="#">Disabled link</a>
-            </nav>
-
+            <MainSidebar></MainSidebar>
         </section>
         <section id="content" class="col-9">
-            <div class="cowntainer">
+            <!-- <div class="cowntainer">
+                <h1 class="m-1 border border-1 text-center">{{ info }} to my vue {{ state.greetings }}!</h1>
                 <div class="row">
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 p-1">
+                        <div>
+                            <p>lorem top</p>
+                            <p>lorem bottom</p>
+                        </div>
+                    </div>
                     <div class="col-xl-2 col-md-6 col-sm-6 p-1">
                         <div>
                             <p>lorem top</p>
@@ -59,7 +271,8 @@ export default {
 
 
                 </div>
-            </div>
+            </div> -->
+            <MainContent :info="this.info"></MainContent>
         </section>
     </main>
 </template>
@@ -73,9 +286,9 @@ main {
     }
 
     & section#content {
-        & .row {
-            margin-left: 0;
-        }
+        height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
 }
 </style>
