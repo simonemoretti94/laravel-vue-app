@@ -33,7 +33,7 @@ export default {
             console.log('fetched Posts: ', this.fetchedPosts);
         }, 5000);
 
-        const showAnchors = document.querySelectorAll("a[id^='post-']");
+        //const showAnchors = document.querySelectorAll("a[id^='post-']");
 
         showAnchors.forEach((e) => {
             e.addEventListener('click', (e) => {
