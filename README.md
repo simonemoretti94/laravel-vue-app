@@ -2,4 +2,6 @@
 
 <p align="center"><a href="https://vuejs.org" target="_blank"><img src="https://www.svgrepo.com/show/327411/logo-vue.svg" width="400" alt="Vue Logo"></a></p>
 
-# *Laravel-vue-app*
+<p align="center">
+Laravel-vue-app*
+</p>
