@@ -11,10 +11,6 @@ Route::get('/', function () {
     return view('index', [
         'data' => 'Welcome',
         'posts' => Post::all(),
-        'post' => [
-            'title' => '',
-            'description' => '',
-        ],
     ]);
 });
 
@@ -23,7 +19,6 @@ Route::resource('posts', PostController::class);
 // Route::get('/admin/posts', [PostController::class, 'index'])->name('admin.posts.index');
 // Route::get('/admin/posts/create', [PostController::class, 'create'])->name('admin.posts.create');
 // Route::post('/admin/posts', [PostController::class, 'store'])->name('admin.posts.store');
-Route::get('/posts/{Post}', [PostController::class, 'show']);
 // Route::get('/admin/posts/{Post}/edit', [PostController::class, 'edit'])->name('admin.posts.edit');
 // Route::put('/admin/posts/{Post}', [PostController::class, 'update'])->name('admin.posts.update');
 // Route::delete('/admin/posts/{Post}', [PostController::class, 'destroy'])->name('admin.posts.destroy');

@@ -1,12 +1,14 @@
 <script>
-import { state } from '../../state';
+import { state } from '../../../state';
 
 export default {
     name: 'MainContent',
     data() {
         return {
             state,
-            postsShow: true,
+
+            fetchControl: false,
+            fetchedPosts: [],
         }
     },
     props: {
@@ -15,7 +17,22 @@ export default {
     methods: {
 
     },
+    created() {
+        axios.get('/api/posts')
+            .then(response => {
+                console.log('response: ', response);
+                this.fetchedPosts.push(response.data.data);
+                this.fetchControl = true;
+            })
+            .catch(error => {
+                console.log("Error", error)
+            });
+    },
     mounted() {
+        setTimeout(() => {
+            console.log('fetched Posts: ', this.fetchedPosts);
+        }, 5000);
+
         const showAnchors = document.querySelectorAll("a[id^='post-']");
 
         showAnchors.forEach((e) => {
@@ -26,16 +43,16 @@ export default {
                 console.log(postIdentifier);
             });
         });
-    }
+    },
 }
 </script>
 
 <template>
     <div class="container">
-        <h1 class="m-1 border border-1 text-center">{{ info }} to my vue {{ state.greetings }}!</h1>
+        <h1 class="m-1 border border-1 text-center">{{ info }} to my laravel vue {{ state.greetings }}!</h1>
         <div class="row">
             <div class="table-responsive-lg mt-2 px-2">
-                <table v-if="postsShow" class="table table-secondary">
+                <table class="table table-secondary">
                     <thead>
                         <tr style="border-bottom: solid 1px blue;">
                             <th scope="col">id</th>
@@ -45,7 +62,8 @@ export default {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="post in state.posts" style="height: 150px;">
+                        <!-- <tr v-if="fetchControl" v-for="post in state.posts" style="height: 150px;" :key="post.id"> -->
+                        <tr v-if="fetchControl" v-for="post in fetchedPosts[0]" style="height: 150px;" :key="post.id">
                             <td>{{ post.id }}</td>
                             <td>{{ post.title }}</td>
                             <td style="overflow-y:auto;">{{ post.description }}</td>
@@ -67,13 +85,8 @@ export default {
                     </tbody>
                 </table>
             </div>
-
-            <div v-if="!postsShow">
-                <p>{{ state.post.title }}</p>
-                <p>{{ state.post.description }}</p>
-            </div>
-
         </div>
+
     </div>
 </template>
 

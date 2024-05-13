@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PostResource;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -10,12 +11,16 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
+    // public function index()
+    // {
+    //     return view('index', [
+    //         'data' => 'Welcome',
+    //         'posts' => Post::all(),
+    //     ]);
+    // }
     public function index()
     {
-        return view('index', [
-            'posts' => Post::all(),
-
-        ]);
+        return PostResource::collection(Post::all());
     }
 
     /**
@@ -39,11 +44,7 @@ class PostController extends Controller
      */
     public function show(post $post)
     {
-        return view('index', [
-            'post' => Post::find($post),
-            'data' => 'Welcome',
-            'posts' => [],
-        ]);
+
     }
 
     /**

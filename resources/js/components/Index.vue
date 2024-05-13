@@ -1,11 +1,11 @@
 <script>
 import { state } from '../state.js';
 import AppHeader from './partials/AppHeader.vue';
-import AppMain from './partials/AppMain.vue';
+import AppMain from './partials/index/AppMain.vue';
 import AppFooter from './partials/AppFooter.vue';
 
 export default {
-    name: 'App',
+    name: 'Index',
     //emits: [''],
     components: {
         AppHeader,
@@ -27,7 +27,6 @@ export default {
         //console.log('info json: ', this.info);
         console.log('posts json: ', this.posts);
         state.posts = this.posts;
-        state.post = this.post;
 
     }
 }

@@ -20,11 +20,10 @@
 
     </head>
     <body>
-     <div id="app">
-        <App :info="{{ json_encode($data) }}" :posts="{{ json_encode($posts) }}" :post="{{ json_encode($post) }}" ></App> 
+     <div id="index">
+        <Index :info="{{ json_encode($data) }}" :posts="{{ json_encode($posts) }}" ></Index> 
         {{-- json_encode($data) necessario in quanto passiamo dati da php lato server e js lato client --}}
      </div>
     {{dd($posts)}}
-    {{dd($post)}}
     </body>
 </html>

@@ -1,5 +1,5 @@
 <script>
-import { state } from '../../state.js';
+import { state } from '../../../state.js';
 import MainSidebar from './MainSidebar.vue';
 import MainContent from './MainContent.vue';
 
