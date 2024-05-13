@@ -21,34 +21,36 @@ export default {
             <div class="table-responsive-lg mt-2 px-2">
                 <table class="table table-secondary">
                     <thead>
-                        <tr>
-                            <th scope="col">Column 1</th>
-                            <th scope="col">Column 2</th>
-                            <th scope="col">Column 3</th>
+                        <tr style="border-bottom: solid 1px blue;">
+                            <th scope="col">id</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="">
-                            <td scope="row">R1C1</td>
-                            <td>R1C2</td>
-                            <td>R1C3</td>
-                        </tr>
-                        <tr class="">
-                            <td scope="row">Item</td>
-                            <td>Item</td>
-                            <td>Item</td>
+                        <tr v-for="post in state.posts" style="height: 150px;">
+                            <td>{{ post.id }}</td>
+                            <td>{{ post.title }}</td>
+                            <td style="overflow-y:auto;">{{ post.description }}</td>
+                            <td>
+                                <div class="col-6 mx-auto d-flex flex-column justify-content-evenly">
+                                    <button class="btn btn-primary bg-gradient my-1">
+                                        <a class="text-white" style="text-decoration: none;"
+                                            href="/admin/posts/{Post}">Show</a>
+                                    </button>
+                                    <button class="btn btn-secondary bg-gradient my-1">
+                                        <a class="text-white" style="text-decoration: none;" href="#">Edit</a>
+                                    </button>
+                                    <button class="btn btn-danger bg-gradient my-1">
+                                        <a class="text-white" style="text-decoration: none;" href="#">Delete</a>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
-            <div v-for="post in state.posts" class="col-xl-2 col-md-6 col-sm-6 p-1">
-                <div>
-                    <p>{{ post.title }}</p>
-                    <p>{{ post.description }}</p>
-                </div>
-            </div>
-
 
         </div>
     </div>
