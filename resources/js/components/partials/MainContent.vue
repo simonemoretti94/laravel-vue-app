@@ -6,20 +6,36 @@ export default {
     data() {
         return {
             state,
+            postsShow: true,
         }
     },
     props: {
         info: String,
+    },
+    methods: {
+
+    },
+    mounted() {
+        const showAnchors = document.querySelectorAll("a[id^='post-']");
+
+        showAnchors.forEach((e) => {
+            e.addEventListener('click', (e) => {
+                this.postsShow = false;
+                console.log(e.target.id);
+                const postIdentifier = e.target.id.split('-');
+                console.log(postIdentifier);
+            });
+        });
     }
 }
 </script>
 
 <template>
-    <div class="cowntainer">
+    <div class="container">
         <h1 class="m-1 border border-1 text-center">{{ info }} to my vue {{ state.greetings }}!</h1>
         <div class="row">
             <div class="table-responsive-lg mt-2 px-2">
-                <table class="table table-secondary">
+                <table v-if="postsShow" class="table table-secondary">
                     <thead>
                         <tr style="border-bottom: solid 1px blue;">
                             <th scope="col">id</th>
@@ -36,8 +52,8 @@ export default {
                             <td>
                                 <div class="col-6 mx-auto d-flex flex-column justify-content-evenly">
                                     <button class="btn btn-primary bg-gradient my-1">
-                                        <a class="text-white" style="text-decoration: none;"
-                                            href="/admin/posts/{Post}">Show</a>
+                                        <a :id="post.id" class="text-white" style="text-decoration: none;"
+                                            :href="`/posts/${post.id}`">Show</a>
                                     </button>
                                     <button class="btn btn-secondary bg-gradient my-1">
                                         <a class="text-white" style="text-decoration: none;" href="#">Edit</a>
@@ -50,6 +66,11 @@ export default {
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <div v-if="!postsShow">
+                <p>{{ state.post.title }}</p>
+                <p>{{ state.post.description }}</p>
             </div>
 
         </div>

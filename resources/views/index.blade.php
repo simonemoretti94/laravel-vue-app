@@ -21,9 +21,10 @@
     </head>
     <body>
      <div id="app">
-        <App :info="{{ json_encode($data) }}" :posts="{{ json_encode($posts) }}" ></App> 
+        <App :info="{{ json_encode($data) }}" :posts="{{ json_encode($posts) }}" :post="{{ json_encode($post) }}" ></App> 
         {{-- json_encode($data) necessario in quanto passiamo dati da php lato server e js lato client --}}
      </div>
     {{dd($posts)}}
+    {{dd($post)}}
     </body>
 </html>

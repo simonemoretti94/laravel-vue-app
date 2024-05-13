@@ -19,7 +19,7 @@ export default {
             state,
         }
     },
-    props: { info: String, posts: Object },
+    props: { info: String, posts: Object, post: Object },
     methods: {
 
     },
@@ -27,6 +27,8 @@ export default {
         //console.log('info json: ', this.info);
         console.log('posts json: ', this.posts);
         state.posts = this.posts;
+        state.post = this.post;
+
     }
 }
 </script>
