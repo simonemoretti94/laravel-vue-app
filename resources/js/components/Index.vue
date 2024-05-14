@@ -6,7 +6,6 @@ import AppFooter from './partials/AppFooter.vue';
 
 export default {
     name: 'Index',
-    //emits: [''],
     components: {
         AppHeader,
         AppMain,

@@ -68,7 +68,7 @@ export default {
                             <td>{{ post.title }}</td>
                             <td style="overflow-y:auto;">{{ post.description }}</td>
                             <td>
-                                <div class="col-6 mx-auto d-flex flex-column justify-content-evenly">
+                                <div id="col_buttons" class="col-6 mx-auto d-flex flex-column justify-content-evenly">
                                     <button class="btn btn-primary bg-gradient my-1">
                                         <a :id="post.id" class="text-white" style="text-decoration: none;"
                                             :href="`/posts/${post.id}`">Show</a>
@@ -93,5 +93,11 @@ export default {
 <style scoped>
 .row {
     margin-left: 0;
+}
+
+div#col_buttons {
+    @media screen and (max-width: 1300px) {
+        width: 100%;
+    }
 }
 </style>

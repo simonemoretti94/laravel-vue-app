@@ -44,7 +44,11 @@ class PostController extends Controller
      */
     public function show(post $post)
     {
+        return view('show', [
+            'post' => Post::find($post),
+        ]);
 
+        // return PostResource::collection(Post::all());
     }
 
     /**
