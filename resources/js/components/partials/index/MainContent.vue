@@ -33,16 +33,16 @@ export default {
             console.log('fetched Posts: ', this.fetchedPosts);
         }, 5000);
 
-        //const showAnchors = document.querySelectorAll("a[id^='post-']");
+        // const showAnchors = document.querySelectorAll("a[id^='post-']");
 
-        showAnchors.forEach((e) => {
-            e.addEventListener('click', (e) => {
-                this.postsShow = false;
-                console.log(e.target.id);
-                const postIdentifier = e.target.id.split('-');
-                console.log(postIdentifier);
-            });
-        });
+        // showAnchors.forEach((e) => {
+        //     e.addEventListener('click', (e) => {
+        //         this.postsShow = false;
+        //         console.log(e.target.id);
+        //         const postIdentifier = e.target.id.split('-');
+        //         console.log(postIdentifier);
+        //     });
+        // });
     },
 }
 </script>

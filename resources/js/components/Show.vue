@@ -13,10 +13,23 @@ export default {
     data() {
         return {
             state,
+            fetchedPosts: [],
+            fetchControl: false,
         }
     },
     props: {
         post: Object,
+    },
+    created() {
+        // axios.get('/api/post/{id}')
+        //     .then(response => {
+        //         console.log('response: ', response);
+        //         this.fetchedPosts.push(response.data.data);
+        //         this.fetchControl = true;
+        //     })
+        //     .catch(error => {
+        //         console.log("Error", error)
+        //     });
     },
     mounted() {
         state.post = this.post[0];
@@ -28,11 +41,11 @@ export default {
     <AppHeader></AppHeader>
     <main>
         <div class="container">
-            <h1 class="text-white">Post id: {{ state.post.id }}</h1>
+            <h1 class="text-white">Post id: {{ post[0].id }}</h1>
             <div class="row bg-light mt-3">
                 <div>
-                    <p>{{ state.post.title }}</p>
-                    <p>{{ state.post.description }}</p>
+                    <p>{{ post[0].title }}</p>
+                    <p>{{ post[0].description }}</p>
                 </div>
 
             </div>

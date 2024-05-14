@@ -48,7 +48,7 @@ class PostController extends Controller
             'post' => Post::find($post),
         ]);
 
-        // return PostResource::collection(Post::all());
+        return PostResource::collection(Post::find($post));
     }
 
     /**
