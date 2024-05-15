@@ -17,7 +17,7 @@ export default {
     created() {
         axios.get('/api/posts')
             .then(response => {
-                console.log('response: ', response);
+                //console.log('response: ', response);
                 this.fetchedPosts.push(response.data.data);
                 this.fetchControl = true;
             })
@@ -27,7 +27,7 @@ export default {
     },
     mounted() {
         setTimeout(() => {
-            console.log('fetched Posts: ', this.fetchedPosts);
+            console.log('main content fetchedPosts: ', this.fetchedPosts);
         }, 5000);
     }
 }

@@ -10,8 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/posts', [PostController::class, 'index']);
 
-// Route::group(['prefix' => 'SM94'], function () {
-//     Route::apiResource('posts', PostController::class);
-// });
-
-// Route::get('/posts/{$post}/edit', [PostController::class, 'edit']);
+/**
+ * index vue api test on post 'id' => 9
+ */
+Route::get('/posts/post9', [PostController::class, 'test']);
