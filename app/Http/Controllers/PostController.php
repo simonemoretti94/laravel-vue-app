@@ -20,7 +20,7 @@ class PostController extends Controller
     // }
     public function index()
     {
-        return PostResource::collection(Post::all());
+        return PostResource::collection(Post::orderByDesc('id')->get());
     }
 
     /**
@@ -28,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -36,7 +36,20 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        dd($request);
+
+        /**
+         * validating data
+         */
+        $val_data = $request->validate([
+            'title' => 'required|min:8|max:50',
+            'description' => 'required|min:30|max:2000',
+        ]);
+
+        Post::create($request->all());
+
+        return view('index');
     }
 
     /**
@@ -55,7 +68,11 @@ class PostController extends Controller
      */
     public function edit(post $post)
     {
-        //
+        //dd($post);
+
+        return view('edit', [
+            'post' => $post,
+        ]);
     }
 
     /**
@@ -63,7 +80,19 @@ class PostController extends Controller
      */
     public function update(Request $request, post $post)
     {
-        //
+        //dd($request);
+
+        /**
+         * validating data
+         */
+        $val_data = $request->validate([
+            'title' => 'required|min:8|max:50',
+            'description' => 'required|min:30|max:2000',
+        ]);
+
+        $post->update($request->all());
+
+        return view('index');
     }
 
     /**

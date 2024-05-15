@@ -17,23 +17,13 @@ export default {
         return {
             state,
         }
-    },
-    props: { info: String, posts: Object, post: Object },
-    methods: {
-
-    },
-    mounted() {
-        //console.log('info json: ', this.info);
-        console.log('posts json: ', this.posts);
-        state.posts = this.posts;
-
     }
 }
 </script>
 
 <template>
     <AppHeader></AppHeader>
-    <AppMain :info="this.info"></AppMain>
+    <AppMain></AppMain>
     <AppFooter></AppFooter>
 </template>
 

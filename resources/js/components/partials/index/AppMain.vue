@@ -13,8 +13,7 @@ export default {
     components: {
         MainSidebar,
         MainContent,
-    },
-    props: { info: String, },
+    }
 }
 </script>
 
@@ -25,7 +24,7 @@ export default {
             <MainSidebar></MainSidebar>
         </section>
         <section id="index_content">
-            <MainContent :info="this.info"></MainContent>
+            <MainContent></MainContent>
         </section>
     </main>
 </template>

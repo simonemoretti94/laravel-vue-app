@@ -11,9 +11,6 @@ export default {
             fetchedPosts: [],
         }
     },
-    props: {
-        info: String,
-    },
     methods: {
 
     },
@@ -32,24 +29,13 @@ export default {
         setTimeout(() => {
             console.log('fetched Posts: ', this.fetchedPosts);
         }, 5000);
-
-        // const showAnchors = document.querySelectorAll("a[id^='post-']");
-
-        // showAnchors.forEach((e) => {
-        //     e.addEventListener('click', (e) => {
-        //         this.postsShow = false;
-        //         console.log(e.target.id);
-        //         const postIdentifier = e.target.id.split('-');
-        //         console.log(postIdentifier);
-        //     });
-        // });
-    },
+    }
 }
 </script>
 
 <template>
     <div class="container">
-        <h1 class="m-1 border border-1 text-center">{{ info }} to my laravel vue {{ state.greetings }}!</h1>
+        <h1 class="m-1 border border-1 text-center">Welcome to my laravel vue {{ state.greetings }}!</h1>
         <div class="row">
             <div class="table-responsive-lg mt-2 px-2">
                 <table class="table table-secondary">
@@ -68,13 +54,14 @@ export default {
                             <td>{{ post.title }}</td>
                             <td style="overflow-y:auto;">{{ post.description }}</td>
                             <td>
-                                <div id="col_buttons" class="col-6 mx-auto d-flex flex-column justify-content-evenly">
+                                <div id="col_buttons" class="col-9 mx-auto d-flex flex-column justify-content-evenly">
                                     <button class="btn btn-primary bg-gradient my-1">
                                         <a :id="post.id" class="text-white" style="text-decoration: none;"
                                             :href="`/posts/${post.id}`">Show</a>
                                     </button>
                                     <button class="btn btn-secondary bg-gradient my-1">
-                                        <a class="text-white" style="text-decoration: none;" href="#">Edit</a>
+                                        <a class="text-white" style="text-decoration: none;"
+                                            :href="`/posts/${post.id}/edit`">Edit</a>
                                     </button>
                                     <button class="btn btn-danger bg-gradient my-1">
                                         <a class="text-white" style="text-decoration: none;" href="#">Delete</a>
@@ -86,7 +73,6 @@ export default {
                 </table>
             </div>
         </div>
-
     </div>
 </template>
 

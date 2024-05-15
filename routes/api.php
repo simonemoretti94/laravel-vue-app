@@ -14,4 +14,4 @@ Route::get('/posts', [PostController::class, 'index']);
 //     Route::apiResource('posts', PostController::class);
 // });
 
-Route::get('/posts/{$post}', [PostController::class, 'show']);
+// Route::get('/posts/{$post}/edit', [PostController::class, 'edit']);

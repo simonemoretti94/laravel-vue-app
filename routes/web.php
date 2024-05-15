@@ -9,8 +9,7 @@ Route::get('/', function () {
     //dd(Post::all());
 
     return view('index', [
-        'data' => 'Welcome',
-        'posts' => Post::all(),
+        'posts' => Post::orderByDesc('id')->get(),
     ]);
 });
 

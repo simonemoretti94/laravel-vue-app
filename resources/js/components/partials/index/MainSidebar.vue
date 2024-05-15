@@ -9,6 +9,10 @@ export default {
         <a class="nav-link active" href="#" aria-current="page">Active link</a>
         <a class="nav-link" href="#">Link</a>
         <a class="nav-link disabled" href="#">Disabled link</a>
+        <button class="col-3 ms-1 btn btn-primary rounded rounded-2">
+            <a style="text-decoration: none; color: white;" href="/posts/create">create
+            </a>
+        </button>
     </nav>
 </template>
 
