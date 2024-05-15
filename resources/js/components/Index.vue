@@ -42,11 +42,11 @@ export default {
 <template>
     <AppHeader></AppHeader>
     <AppMain></AppMain>
-    <!-- <div>
+    <div>
         test api <br>
         {{ temp[0] }}
         <br>
-    </div> -->
+    </div>
     <AppFooter></AppFooter>
 </template>
 
