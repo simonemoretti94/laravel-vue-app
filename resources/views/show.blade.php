@@ -8,22 +8,10 @@
 <Kopf></Kopf>
 </div>
 
+<div id="show">
+<Show :post="{{ json_encode($post) }}"></Show>
+</div> 
 
-<main>
-<div class="container">
-
-    <h1 class="text-white">Post id: {{ $post[0]->id }}</h1>
-    <div class="row bg-light mt-3">
-        <div>
-            <p>{{ $post[0]->title }}</p>
-            <p>{{ $post[0]->description }}</p>
-        </div>
-
-    </div>
-        
-</div>
-</main>
-    
 <div id="fuß">
 <Fuß></Fuß>
 </div>

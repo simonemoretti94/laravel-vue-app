@@ -57,10 +57,13 @@ class PostController extends Controller
      */
     public function show(post $post)
     {
+        // if (request()->wantsJson()) {
+        //     return PostResource::collection(Post::find($post));
+        // }
+
         return view('show', [
             'post' => Post::find($post),
         ]);
-        // return PostResource::collection(Post::find($post));
     }
 
     /**

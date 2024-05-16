@@ -14,4 +14,6 @@ Route::get('/posts', [PostController::class, 'index']);
 /**
  * index vue api test on post 'id' => 9
  */
-Route::get('/posts/post9', [PostApiController::class, 'test']);
+Route::get('/posts/post6', [PostApiController::class, 'test']);
+
+// Route::get('/posts/{post}', [PostController::class, 'show']);

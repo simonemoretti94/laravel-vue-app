@@ -9,6 +9,11 @@ class PostApiController extends Controller
 {
     public function test()
     {
-        return PostResource::collection(Post::where('id', 9)->get());
+        return PostResource::collection(Post::where('id', 6)->get());
+    }
+
+    public function showElement($post)
+    {
+        return PostResource::collection(Post::find($post));
     }
 }

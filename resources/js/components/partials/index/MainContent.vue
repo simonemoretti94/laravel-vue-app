@@ -11,9 +11,6 @@ export default {
             fetchedPosts: [],
         }
     },
-    methods: {
-
-    },
     created() {
         axios.get('/api/posts')
             .then(response => {
@@ -44,7 +41,7 @@ export default {
                             <th scope="col">id</th>
                             <th scope="col">Title</th>
                             <th scope="col">Description</th>
-                            <th scope="col">Actions</th>
+                            <th scope="col" style="text-align: center;">Actions</th>
                         </tr>
                     </thead>
                     <tbody>

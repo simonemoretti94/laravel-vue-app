@@ -4,6 +4,7 @@ import Index from "./components/Index.vue";
 import AppHeader from "./components/partials/AppHeader.vue";
 import AppFooter from "./components/partials/AppFooter.vue";
 import MainSidebar from "./components/partials/index/MainSidebar.vue";
+import AppShow from "./components/partials/show/AppShow.vue";
 
 /**
  * header
@@ -32,3 +33,10 @@ sideBar.mount('#sidebar');
 const index = createApp({});
 index.component('Index', Index);
 index.mount('#index');
+
+/**
+ * show
+ */
+const show = createApp({});
+show.component('Show', AppShow);
+show.mount('#show');

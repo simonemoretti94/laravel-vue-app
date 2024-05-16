@@ -21,7 +21,7 @@ export default {
         }
     },
     created() {
-        axios.get('/api/posts/post9')
+        axios.get('/api/posts/post6')
             .then(response => {
                 //console.log('post9: ', response);
                 this.temp.push(response.data.data);
