@@ -4,6 +4,8 @@
 
 @section('content')
 
+@if (Route::currentRouteName() == 'posts.show')
+    
 <div id="kopf">
 <Kopf></Kopf>
 </div>
@@ -15,6 +17,7 @@
 <div id="fuß">
 <Fuß></Fuß>
 </div>
+@endif
 
 
 <style scoped>

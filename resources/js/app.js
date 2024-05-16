@@ -7,20 +7,6 @@ import MainSidebar from "./components/partials/index/MainSidebar.vue";
 import AppShow from "./components/partials/show/AppShow.vue";
 
 /**
- * header
- */
-const Kopf = createApp({});
-Kopf.component('Kopf', AppHeader)
-Kopf.mount('#kopf')
-
-/**
- * footer
- */
-const Fuß = createApp({});
-Fuß.component('Fuß', AppFooter)
-Fuß.mount('#fuß')
-
-/**
  * sidebar
  */
 const sideBar = createApp({});
@@ -34,9 +20,24 @@ const index = createApp({});
 index.component('Index', Index);
 index.mount('#index');
 
+
 /**
  * show
  */
 const show = createApp({});
 show.component('Show', AppShow);
 show.mount('#show');
+
+/**
+ * header
+ */
+const Kopf = createApp({});
+Kopf.component('Kopf', AppHeader)
+Kopf.mount('#kopf')
+
+/**
+ * footer
+ */
+const Fuß = createApp({});
+Fuß.component('Fuß', AppFooter)
+Fuß.mount('#fuß')
