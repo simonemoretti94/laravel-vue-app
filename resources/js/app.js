@@ -41,3 +41,11 @@ Kopf.mount('#kopf')
 const Fuß = createApp({});
 Fuß.component('Fuß', AppFooter)
 Fuß.mount('#fuß')
+
+// const components = createApp({}).component([
+//     ('Sidebar', MainSidebar).mount('#sidebar'),
+//     ('Index', Index).mount('#index'),
+//     ('Show', AppShow).mount('#show'),
+//     ('Kopf', AppHeader).mount('#kopf'),
+//     ('Fuß', AppFooter).mount('#fuß')
+// ]);
